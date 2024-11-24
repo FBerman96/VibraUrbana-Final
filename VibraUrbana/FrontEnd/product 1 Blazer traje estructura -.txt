@@ -1,0 +1,11 @@
+product 1: Blazer traje estructura - Precio: $279.999
+product 2: CAMISETA BÁSICA HEAVY WEIGHT- Precio: $42.990
+product 3: JEANS CARGO SALPICADURAS -  Precio: $139.990,00 
+product 4: CAMISA DENIM - Precio: $79.990,00 
+product 5: VESTIDO MIDI VUELO ZW COLLECTION - Precio: $245.990,00 
+product 6: CAMISETA NUDO ALGODÓN - Precio: $59.990,00
+product 7: VESTIDO TEXTO TABLAS TÉCNICO -  Precio: $63.990,00 
+product 8: BERMUDA PERLAS -  Precio: $63.990,00 
+product 9: CAMISETA SURF VIBES - Precio: $28.990,00
+product 10: BERMUDA DENIM BÁSICA - Precio $79.990,00 
+product 11:CONJUNTO SUDADERA Y LEGGING MINNIE MOUSE © DISNEY - Precio: $63.990,00 

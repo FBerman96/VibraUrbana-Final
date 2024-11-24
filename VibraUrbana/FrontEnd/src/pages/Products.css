@@ -1,0 +1,24 @@
+.product-row {
+    row-gap: 40px; 
+  }
+  
+  .product-column {
+    padding: 20px; 
+  }
+  
+  .product-card {
+    padding: 15px;
+    margin-bottom: 30px; 
+     
+  }
+  
+  .product-image {
+    max-height: 250px; 
+    object-fit: contain; 
+  }
+  .toast-fixed {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050; 
+  }

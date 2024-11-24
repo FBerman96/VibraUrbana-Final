@@ -1,0 +1,27 @@
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .Toastify__toast-container {
+    z-index: 9999; 
+  }
+  
+  .card-header {
+    background-color: navajowhite;
+  }
+
+  .btn btn-success btn-lg {
+    background-color: blue;
+  }
+
+  .btn btn-success btn-lg {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }

@@ -1,0 +1,189 @@
+body, html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+
+/* Header - Estilo de punta a punta */
+header {
+  width: 100%; /* Ocupa todo el ancho */
+  box-shadow: 0 4px 8px rgba(233, 144, 85, 0.1);
+  position: relative;
+  z-index: 10;
+  
+}
+
+header nav {
+  max-width: 1280px; /* Limita el contenido a un ancho */
+  margin: 0 auto; /* Centra el contenido */
+  padding: 0 20px; /* Espaciado horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffafbd;
+}
+
+/* Footer - Estilo de punta a punta */
+footer {
+  width: 100%; /* Ocupa todo el ancho */
+  background-color: rgba(255, 108, 83, 0.9); /* Fondo color suave */
+  padding: 40px 0; /* Espaciado superior e inferior */
+  text-align: center; /* Centra el texto */
+  font-weight: 600;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  color: #fff; /* Color de texto blanco para contraste */
+}
+
+footer .content {
+  max-width: 1280px; /* Limita el contenido a un ancho */
+  margin: 0 auto; /* Centra el contenido */
+  padding: 0 20px; /* Espaciado horizontal */
+}
+
+footer h5 {
+  font-size: 1.5rem; /* Tamaño del título */
+  color: #fff; /* Color blanco */
+  margin-bottom: 10px; /* Espacio inferior */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #e5e5e5; /* Color del texto ligeramente más suave */
+}
+
+footer a {
+  color: #fff; /* Color blanco para los enlaces */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+  font-weight: 600;
+  display: inline-block; /* Asegura que el enlace sea un bloque en línea */
+
+}
+
+footer a:hover {
+  color: #ffafbd; /* Color en hover */
+  transform: scale(1.05); /* Efecto de aumento */
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+footer .social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espacio entre íconos */
+}
+
+footer .social-links a {
+  color: #fff; /* Color blanco en los iconos */
+  font-size: 1.5rem; /* Tamaño de los íconos */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: #ffafbd; /* Color de hover para los íconos */
+  transform: scale(1.1); /* Efecto de aumento */
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #e5dea1; 
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+
+
+/* Estilo para el nav */
+.navbar {
+  width: 100%; /* Asegura que el nav ocupe todo el ancho */
+  background-color: rgba(255, 108, 83, 0.9);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  transition: transform 0.2s ease, color 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+  transform: scale(1.13);
+  color: #e5dea1 !important;
+}
+
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #faeecb 0%, #ffc3a0 100%);
+}
+
+html {
+  overflow: auto;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.col-md-4 {
+  margin-bottom: 20px;
+}
+
+mt-4 {
+  text-align: center;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7d79b; /* Color de fondo del botón */
+  border-radius: 50%; /* Hace que sea circular */
+  width: 50px; /* Ancho del botón */
+  height: 50px; /* Alto del botón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.social-button img {
+  width: 24px; /* Tamaño del ícono */
+  height: 24px;
+}
+
+.social-button:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+  background-color: #ffafbd; /* Cambio de color al pasar el mouse */
+}
+
