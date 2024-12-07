@@ -13,34 +13,39 @@ import AboutUs from './pages/AboutUs';
 import ProtectedRoute from './components/ProtectedRoute';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
+import { LoadingProvider } from './context/LoadingContext';  // Importar LoadingProvider
+import LoadingModal from './components/LoadingModal';  // Importar LoadingModal
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
     <Router>
-      <AuthProvider>
+      <LoadingProvider>
         <CartProvider>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/contacto" element={<ContactForm />} />
-            <Route path="/acerca-de-nosotros" element={<AboutUs />} />
-            <Route 
-              path="/admin" 
-              element={
-                <ProtectedRoute requiredRole="admin">
-                  <AdminPanel />
-                </ProtectedRoute>
-              } 
-            />
-          </Routes>
-          <Footer />
+          <AuthProvider>
+            <Header />
+            <LoadingModal />  {/* Mostrar el modal de carga */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/contacto" element={<ContactForm />} />
+              <Route path="/acerca-de-nosotros" element={<AboutUs />} />
+              <Route 
+                path="/admin" 
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <AdminPanel />
+                  </ProtectedRoute>
+                } 
+              />
+            </Routes>
+            <Footer />
+          </AuthProvider>
         </CartProvider>
-      </AuthProvider>
+      </LoadingProvider>
     </Router>
   );
 };

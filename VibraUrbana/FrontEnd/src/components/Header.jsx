@@ -1,10 +1,13 @@
-import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate
 import { AuthContext } from '../context/AuthContext';
 import logo from '../assets/logo.png';
+import { ClipLoader } from 'react-spinners'; // Importa el spinner
 
 const Header = () => {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
+  const navigate = useNavigate(); // Define el hook de navegación
+  const [loading, setLoading] = useState(false); // Estado para controlar el loading
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -15,15 +18,20 @@ const Header = () => {
       setCurrentUser(JSON.parse(storedUser)); // Asegurarse de que el usuario se carga desde localStorage
     }
   }, [currentUser, setCurrentUser]);
-  
+
   console.log('Estado actual de currentUser en Header:', currentUser);
-  
-  
 
   const logout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('user');
-    setCurrentUser(null);
+    setLoading(true); // Muestra el spinner cuando empieza el logout
+
+    // Simula una pequeña espera para el logout (puedes omitir esto si no lo necesitas)
+    setTimeout(() => {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('user');
+      setCurrentUser(null);
+      navigate('/login'); // Redirige al Login después de hacer logout
+      setLoading(false); // Oculta el spinner una vez que se complete el logout
+    }, 650); // Simulando un delay de 500ms para el logout
   };
 
   return (
@@ -66,7 +74,7 @@ const Header = () => {
                   <span className="nav-link">Hola, {currentUser.username}</span>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link btn" onClick={logout}>Logout</button>
+                  <button className="nav-link btn" onClick={logout} disabled={loading}>Logout</button>
                 </li>
                 {currentUser.role === 'admin' && (
                   <li className="nav-item">
@@ -78,6 +86,22 @@ const Header = () => {
           </ul>
         </div>
       </div>
+
+      {/* Modal con el spinner */}
+      {loading && (
+        <div className="modal show d-block" tabIndex="-1" aria-labelledby="logoutModalLabel" style={{ display: 'block' }} aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content bg-dark text-light">
+              <div className="modal-header border-0">
+                <h5 className="modal-title" id="logoutModalLabel" style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>Cerrando sesión...</h5>
+              </div>
+              <div className="modal-body text-center">
+                <ClipLoader color="#ffffff" size={50} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

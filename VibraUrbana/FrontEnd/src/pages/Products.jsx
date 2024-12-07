@@ -5,14 +5,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import './Products.css';
+import { useLoading } from '../context/LoadingContext';  // Importar el hook de loading
 
 const Products = () => {
   const { addToCart } = useContext(CartContext); // Usamos el contexto de carrito para agregar productos
   const [products, setProducts] = useState([]);  // Estado para almacenar los productos
-  const [loading, setLoading] = useState(true);  // Estado para mostrar un mensaje de carga
+  const { setLoading } = useLoading();  // Usar el contexto de loading
 
   // Obtener productos desde la API cuando el componente se monta
   useEffect(() => {
+    // Activar el loading
+    setLoading(true);
+
     // Realizamos una solicitud GET a la API para obtener los productos
     axios.get('http://localhost:5000/api/products') // URL de la API
       .then(response => {
@@ -23,7 +27,7 @@ const Products = () => {
         console.error('Error fetching products:', error);  // Mostramos un error si ocurre
         setLoading(false);  // Cambiamos el estado de loading a false
       });
-  }, []); // El array vacío significa que solo se ejecuta una vez al montar el componente
+  }, [setLoading]); // Solo se ejecuta una vez al montar el componente
 
   // Función para agregar un producto al carrito
   const handleAddToCart = (product) => {
@@ -44,11 +48,6 @@ const Products = () => {
       },
     });
   };
-
-  // Si está cargando, mostramos un mensaje de carga
-  if (loading) {
-    return <div className="container text-center mt-5">Cargando productos...</div>;
-  }
 
   return (
     <div className="container mt-5">
