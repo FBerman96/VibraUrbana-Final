@@ -220,7 +220,7 @@ const AdminPanel = () => {
 
   return (
     <div className="container mt-5">
-      <h2>Admin Panel</h2>
+      <h2>Panel de Administracion</h2>
       <DataTable
         columns={columns}
         data={users}
