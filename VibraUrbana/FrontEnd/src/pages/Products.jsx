@@ -18,7 +18,7 @@ const Products = () => {
     setLoading(true);
 
     // Realizamos una solicitud GET a la API para obtener los productos
-    axios.get('http://localhost:5000/api/products') // URL de la API
+    axios.get('http://localhost:5000/api/products') 
       .then(response => {
         setProducts(response.data);  // Almacenamos los productos en el estado
         setLoading(false);  // Cambiamos el estado de loading a false
